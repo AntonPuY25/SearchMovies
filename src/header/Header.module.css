@@ -24,3 +24,6 @@
 .searchContainer{
     display: flex;
 }
+.error{
+    border: 1px red solid;
+}
