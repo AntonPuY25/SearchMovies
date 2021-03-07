@@ -1,15 +1,28 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL:'http://www.omdbapi.com/'
+    baseURL: 'http://www.omdbapi.com/'
 })
 const key = '?apikey=c693b0c5';
 type TypeGetApi = {
-    getMovies:(title:string)=>any
+    getMovies: (title: string) => Promise<Array<TypeMovies>>
 }
-const GetApi:TypeGetApi={
-   getMovies(title:string){
-        return instance.get(`${key}&s=${title}`).then(response=>response.data.Search)
+export type TypeMovies = {
+    Title:string,
+    Year: string
+    imdbID: string
+    Type: string
+    Poster:string
+}
+
+type TypeResponseData = {
+    Response: string
+    Search: Array<TypeMovies>
+    totalResults: string
+}
+const GetApi: TypeGetApi = {
+    getMovies(title: string) {
+        return instance.get<TypeResponseData>(`${key}&s=${title}`).then(response => response.data.Search)
     },
 
 }
