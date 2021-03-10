@@ -19,11 +19,11 @@ function Header() {
         <div className={style.headerBlock}>
             <div className={style.headerContainer}>
                 <div className={style.logoContainer}>
-
+                   SearchMovies
                 </div>
                 <div className={style.searchContainer}>
-                    <input type="text" placeholder="Фильмы, сериалы, персоны "
-                           value={valueSearching} onChange={changeInputValue}
+                    <input type="text" id="input" placeholder="Фильмы, сериалы, персоны "
+                            value={valueSearching} onChange={changeInputValue}
                           className={isError?style.error:""}
                            />
                     <button onClick={btnSearch}>Search</button>

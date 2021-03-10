@@ -22,7 +22,7 @@ type TypeResponseData = {
 }
 const GetApi: TypeGetApi = {
     getMovies(title: string) {
-        return instance.get<TypeResponseData>(`${key}&s=${title}`).then(response => response.data.Search)
+        return instance.get<TypeResponseData>(`${key}&t=${title}`).then(response => response.data.Search)
     },
 
 }

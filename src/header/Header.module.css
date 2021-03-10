@@ -1,28 +1,29 @@
 .headerBlock{
-    background-color: #222222;
-    height: 50px;
+    background-color: #1f1f1f;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .headerContainer{
-    color: seashell;
-    border: 1px seashell solid;
     display: flex;
-
     width: 80%;
     justify-content: space-around;
 }
 .logoContainer{
-    border: 1px seashell solid;
-    background-color: seashell;
-
-    width: 200px;
+    border: seashell  1px solid;
+    color: seashell;
+    width: 40%;
     display: flex;
     align-items: center;
 }
 .searchContainer{
     display: flex;
+    width: 50%;
+}
+input{
+    width: 60%;
+    height: 30px;
 }
 .error{
     border: 1px red solid;
