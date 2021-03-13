@@ -6,12 +6,14 @@ export type TypeInitialState = {
     movies: TypeResponseData
     valueSearching:string
     isError:boolean
+    isHaveAMovie:boolean
 }
 
 const initialState = {
     movies:{}as TypeResponseData,
     valueSearching:"",
-    isError:false
+    isError:false,
+    isHaveAMovie:false
 }
 type TypeSetMoviesAction = ReturnType<typeof setMoviesAC>
 const setMoviesAC = (movies:TypeResponseData) => {
@@ -34,8 +36,15 @@ export const setIsError = (isError:boolean)=>{
         isError
     } as const
 }
+export const haveAMovieAC = (isHave:boolean)=>{
+    return {
+        type:"/movies_reducer/isHaveAMovie",
+        isHave
+    } as const
+}
+type TypeisHaveAction = ReturnType<typeof haveAMovieAC>
 
-type TypeActions = TypeSetMoviesAction |TypeSetTextSearching|TypeIsError;
+type TypeActions = TypeSetMoviesAction |TypeSetTextSearching|TypeIsError|TypeisHaveAction;
 const MoviesReducer = (state: TypeInitialState = initialState, action: TypeActions): TypeInitialState => {
     switch (action.type) {
         case "moviesReducer/SET_MOVIES": {
@@ -57,6 +66,12 @@ const MoviesReducer = (state: TypeInitialState = initialState, action: TypeActio
             isError:action.isError
             }
         }
+        case "/movies_reducer/isHaveAMovie":{
+            return{
+                ...state,
+                isHaveAMovie:action.isHave
+            }
+        }
 
         default:
             return state
@@ -70,5 +85,6 @@ export const getMoviesThunkCreator = ():ThunkAction<void, TypeStore, unknown, Ty
        const result = await GetApi.getMovies(getState().moviesPage.valueSearching)
        dispatch(setMoviesAC(result))
        dispatch(setIsError(false))
+       dispatch(haveAMovieAC(true))
        console.log(result)
 }
