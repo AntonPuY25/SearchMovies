@@ -1,20 +1,20 @@
-import GetApi, {TypeMovies} from "../../Dall/apiServer";
+import GetApi, {TypeResponseData} from "../../Dall/apiServer";
 import {ThunkAction} from "redux-thunk";
 import {TypeStore} from "../store";
 
 export type TypeInitialState = {
-    movies: Array<TypeMovies>
+    movies: TypeResponseData
     valueSearching:string
     isError:boolean
 }
 
 const initialState = {
-    movies: [],
+    movies:{}as TypeResponseData,
     valueSearching:"",
     isError:false
 }
 type TypeSetMoviesAction = ReturnType<typeof setMoviesAC>
-const setMoviesAC = (movies: Array<TypeMovies>) => {
+const setMoviesAC = (movies:TypeResponseData) => {
     return {
         type: 'moviesReducer/SET_MOVIES',
         movies
@@ -39,10 +39,12 @@ type TypeActions = TypeSetMoviesAction |TypeSetTextSearching|TypeIsError;
 const MoviesReducer = (state: TypeInitialState = initialState, action: TypeActions): TypeInitialState => {
     switch (action.type) {
         case "moviesReducer/SET_MOVIES": {
+            let newState = action.movies
             return {
-                ...state,
-                movies: action.movies,
+            ...state,
+                movies:newState,
                 valueSearching:""
+
             }
         }
         case "moviesReducer/SET_TEXT_SEARCHING_MOVIES":{

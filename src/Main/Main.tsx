@@ -1,23 +1,26 @@
 import React from 'react';
 import style from './Main.module.css';
+import {useSelector} from "react-redux";
+import {getMovieSelectors} from "../selectors/selectors";
 
 
 const Main = () => {
+    const state = useSelector(getMovieSelectors)
     return (
         <div className={style.mainBlock}>
             <div className={style.mainContainer}>
                 <div className={style.mainInfo}>
                 <div className={style.mainImg}>
-                     <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/96d93e3a-fdbf-4b6f-b02d-2fc9c2648a18/300x450"/>
+                     <img alt={'Poster'} src={state.movies.Poster}/>
                 </div>
                 <div className={style.mainText}>
-                    <h1>Титаник</h1>
+                    <h1>{state.movies.Title}</h1>
                     <div className={style.textBlock}>
                         <div className={style.name}>
                             Год производства
                         </div>
                         <div className={style.text}>
-                            1997
+                            {state.movies.Year}
                         </div>
                     </div>
                     <div className={style.textBlock}>
@@ -25,7 +28,7 @@ const Main = () => {
                             Страна
                         </div>
                         <div className={style.text}>
-                            США, Мексика, Австралия, Канада
+                            {state.movies.Country}
                         </div>
                     </div>
                     <div className={style.textBlock}>
@@ -33,7 +36,7 @@ const Main = () => {
                             Жанр
                         </div>
                         <div className={style.text}>
-                            мелодрама, история, триллер, драма
+                            {state.movies.Genre}
                         </div>
                     </div>
                     <div className={style.textBlock}>
@@ -41,7 +44,7 @@ const Main = () => {
                             Режиссер
                         </div>
                         <div className={style.text}>
-                            Джейс Кэмерон
+                            {state.movies.Director}
                         </div>
                     </div>
                     <div className={style.textBlock}>
@@ -49,7 +52,7 @@ const Main = () => {
                             В главных ролях
                         </div>
                         <div className={style.text}>
-                            Леонардо Ди Каприо, Кейт Уинслет, Билли Зейн, Кэти Бэйтс, Фрэнсис Фишер, Глория Стюарт, Билл Пэкстон, Бернард Хилл, Девид Уорнер, Виктор Гарбер
+                            {state.movies.Actors}
                         </div>
                     </div>
                     <div className={style.textBlock}>
@@ -57,7 +60,7 @@ const Main = () => {
                             Бюджет
                         </div>
                         <div className={style.text}>
-                            $200 000 000
+                            {state.movies.BoxOffice}
                         </div>
                     </div>
                     <div className={style.textBlock}>
@@ -81,7 +84,7 @@ const Main = () => {
                             Время
                         </div>
                         <div className={style.text}>
-                            194 мин./03:14
+                            {state.movies.Runtime}
                         </div>
                     </div>
                 </div>

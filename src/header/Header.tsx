@@ -1,12 +1,12 @@
 import React, {ChangeEvent} from 'react';
 import style from './Header.module.css';
 import {useDispatch, useSelector} from "react-redux";
-import {getAllMoviesSelectors} from "../selectors/selectors";
+import { getMovieSelectors} from "../selectors/selectors";
 import {getMoviesThunkCreator, setIsError, setTextSearchingMovies} from "../Store/reducers/moviesReducer";
 
 
 function Header() {
-    const {valueSearching,isError} = useSelector(getAllMoviesSelectors)
+    const {valueSearching,isError} = useSelector(getMovieSelectors)
     const dispatch = useDispatch()
     const changeInputValue = (event: ChangeEvent<HTMLInputElement>) => {
         dispatch(setTextSearchingMovies(event.currentTarget.value))
@@ -22,7 +22,7 @@ function Header() {
                    SearchMovies
                 </div>
                 <div className={style.searchContainer}>
-                    <input type="text" id="input" placeholder="Фильмы, сериалы, персоны "
+                    <input type="text" id="input" placeholder="Фильмы, сериалы "
                             value={valueSearching} onChange={changeInputValue}
                           className={isError?style.error:""}
                            />

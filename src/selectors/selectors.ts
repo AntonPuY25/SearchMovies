@@ -1,7 +1,7 @@
 import {TypeStore} from "../Store/store";
 
 
-export const getAllMoviesSelectors = (state: TypeStore) => {
+export const getMovieSelectors = (state: TypeStore) => {
     return state.moviesPage
 }
-export type TypeGetAllMoviesSelector = ReturnType<typeof getAllMoviesSelectors>
+export type TypeGetAllMoviesSelector = ReturnType<typeof getMovieSelectors>
