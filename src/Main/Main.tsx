@@ -6,6 +6,7 @@ import {getMovieSelectors} from "../selectors/selectors";
 
 const Main = () => {
     const state = useSelector(getMovieSelectors)
+
     return (
         <div className={style.mainBlock}>
             {
@@ -59,18 +60,18 @@ const Main = () => {
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Awards(награды)
+                                        Awards
                                     </div>
                                     <div className={style.text}>
-
+                                        {state.movies.Awards}
                                     </div>
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Rating(рейтинг)
+                                        Rating
                                     </div>
                                     <div className={style.text}>
-                                        8.1
+                                        {state.movies.imdbRating}
                                     </div>
                                 </div>
                                 <div className={style.textBlock}>
@@ -86,10 +87,7 @@ const Main = () => {
                         <div className={style.mainDescription}>
                             <div className={style.descriptionText}>
                                 <h2>Description</h2>
-                             <span>Красавец-лайнер, совершающий полет из Сиднея в Лос-Анджелес, неожиданно терпит крушение.
-                                 48 пассажиров оказываются на пустынном острове посреди океана. Люди в панике.
-                                 Надежда быть найденными довольно призрачна.
-                                 Поэтому остается только одно: собраться с силами и постараться выжить на острове, начиненном множеством опасностей...</span>
+                             <span> {state.movies.Plot}</span>
                             </div>
                         </div>
                     </div> :
