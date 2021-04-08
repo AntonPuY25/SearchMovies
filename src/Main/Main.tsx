@@ -19,7 +19,7 @@ const Main = () => {
                                 <h1>{state.movies.Title}</h1>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Год производства
+                                        Production year
                                     </div>
                                     <div className={style.text}>
                                         {state.movies.Year}
@@ -27,7 +27,7 @@ const Main = () => {
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Страна
+                                        The country
                                     </div>
                                     <div className={style.text}>
                                         {state.movies.Country}
@@ -35,7 +35,7 @@ const Main = () => {
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Жанр
+                                        Genre
                                     </div>
                                     <div className={style.text}>
                                         {state.movies.Genre}
@@ -43,7 +43,7 @@ const Main = () => {
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Режиссер
+                                        Producer
                                     </div>
                                     <div className={style.text}>
                                         {state.movies.Director}
@@ -51,7 +51,7 @@ const Main = () => {
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        В главных ролях
+                                        Starring
                                     </div>
                                     <div className={style.text}>
                                         {state.movies.Actors}
@@ -59,36 +59,37 @@ const Main = () => {
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Бюджет
+                                        Awards(награды)
                                     </div>
                                     <div className={style.text}>
-                                        {state.movies.BoxOffice}
+
                                     </div>
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Сборы в мире
+                                        Rating(рейтинг)
                                     </div>
                                     <div className={style.text}>
-                                        +$1 526 700 000=$2 127 488 188
+                                        8.1
                                     </div>
                                 </div>
                                 <div className={style.textBlock}>
                                     <div className={style.name}>
-                                        Возвраст
-                                    </div>
-                                    <div className={style.text}>
-                                        12+
-                                    </div>
-                                </div>
-                                <div className={style.textBlock}>
-                                    <div className={style.name}>
-                                        Время
+                                        Time
                                     </div>
                                     <div className={style.text}>
                                         {state.movies.Runtime}
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className={style.mainDescription}>
+                            <div className={style.descriptionText}>
+                                <h2>Description</h2>
+                             <span>Красавец-лайнер, совершающий полет из Сиднея в Лос-Анджелес, неожиданно терпит крушение.
+                                 48 пассажиров оказываются на пустынном острове посреди океана. Люди в панике.
+                                 Надежда быть найденными довольно призрачна.
+                                 Поэтому остается только одно: собраться с силами и постараться выжить на острове, начиненном множеством опасностей...</span>
                             </div>
                         </div>
                     </div> :

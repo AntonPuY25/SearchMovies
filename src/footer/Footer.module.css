@@ -1,0 +1,97 @@
+.footerBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.footerContainer {
+    background-color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 44px;
+    width: 80%;
+    height: 100px;
+
+}
+.footerIcon{
+    border-bottom: hsl(0deg 0% 100% / 10%) 1px solid;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+
+}
+.footerIcon img{
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
+    opacity: 1;
+
+}
+.footerIcon img:hover{
+    opacity: 0.3;
+}
+.icon{
+
+    width: 35%;
+    height: 50%;
+    justify-content: center;
+}
+
+.footerYear{
+
+    display: flex;
+    align-items: center;
+    color: #828383;
+    font-size: 13px;
+    width: 80%;
+    height: 50%;
+}
+@media screen and (max-width: 1440px){
+    .footerIcon img{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+}
+@media screen and (max-width: 1125px){
+    .footerIcon img{
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+
+}
+@media screen and (max-width: 1050px){
+.icon {
+    width: 35%;
+}
+}
+@media screen and (max-width: 750px){
+    .icon {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 584px){
+    .icon {
+        width: 55%;
+    }
+}
+@media screen and (max-width: 480px){
+    .icon {
+        width: 65%;
+    }
+}
+@media screen and (max-width: 404px){
+    .footerIcon img{
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+    }
+}
